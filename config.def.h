@@ -108,8 +108,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ 0,                            XF86XK_MonBrightnessUp,  spawn, {.v = briupcmd } },
-	{ 0,                            XF86XK_MonBrightnessDown,spawn, {.v = bridowncmd } },
+	{ 0,                            XF86XK_MonBrightnessUp,  spawn, {.v = brightnessUp } },
+	{ 0,                            XF86XK_MonBrightnessDown,spawn, {.v = brightnessDown } },
 	{ MODKEY|ShiftMask,             XK_Escape,      quit,           {0} },
 };
 
