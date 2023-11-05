@@ -35,9 +35,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+	/* class	instance	title   tags mask	iscentered	isfloating  monitor */
+	{ "Gimp",	NULL,		NULL,   0,		0,		1,		-1 },
+	{ "discord",	NULL,		NULL,	1 << 2,		0,		0,		+1 },
+	{ "Signal",     NULL,		NULL,	1 << 2,		0,		0,		+1 },
+	{ "Slack",	NULL,		NULL,	1 << 2,		0,		0,		+1 },
+	{ "thunderbird",NULL,		NULL,	1 << 7,		0,		0,		+1 },
+	{ "Sonixd",	NULL,		NULL,	1 << 3,		0,		0,		+0 },
+	{ "KeePassXC",  NULL,		NULL,	1 << 4,		0,		0,		+1 },
+
 };
 
 /* layout(s) */
