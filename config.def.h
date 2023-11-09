@@ -80,11 +80,12 @@ static const char *browser[] 	    = { "firefox", NULL };
 static const char *dmenumaim[]      = { "screenshotmenu", NULL };
 
 /* Systemcontrole */
-static const char *muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)", NULL };
-static const char *volUpCmd[]       = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_SINK@ 3%+; kill -44 $(pidof dwmblocks)", NULL };
-static const char *volDownCmd[]     = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_SINK@ 3%-; kill -44 $(pidof dwmblocks)", NULL };
-static const char *brightnessDown[] = { "light -U 15", NULL };
-static const char *brightnessUp[]   = { "light -A 15", NULL };
+static const char muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)" };
+static const char volUpCmd[]       = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_SINK@ 3%+; kill -44 $(pidof dwmblocks)" };
+static const char volDownCmd[]     = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_SINK@ 3%-; kill -44 $(pidof dwmblocks)" };
+static const char brightnessDown[] = { "light -U 15" };
+static const char brightnessUp[]   = { "light -A 15" };
+
 static const char *nextTitle[]      = { "playerctl", "next", NULL };
 static const char *prevTitle[]      = { "playerctl", "previous", NULL };
 static const char *pauseTitle[]     = { "playerctl", "play-pause", NULL };
