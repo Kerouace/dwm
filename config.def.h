@@ -74,17 +74,20 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] 	   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *browser[] 	   = { "firefox", NULL };
-static const char *dmenumaim[]     = { "screenshotmenu", NULL };
+static const char *dmenucmd[] 	    = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]        = { "st", NULL };
+static const char *browser[] 	    = { "firefox", NULL };
+static const char *dmenumaim[]      = { "screenshotmenu", NULL };
 
 /* Systemcontrole */
-static const char *mutecmd[]       = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)", NULL };
-static const char *volupcmd[]      = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)", NULL };
-static const char *voldowncmd[]    = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)", NULL };
-static const char *brightnessDown[] = {"light -U 15", NULL};
-static const char *brightnessUp[] = {"light -A 15", NULL};
+static const char *muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)", NULL };
+static const char *volUpCmd[]       = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)", NULL };
+static const char *volDownCmd[]     = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)", NULL };
+static const char *nextTitle[]      = { "playerctl", "next" NULL };
+static const char *prevTitle[]      = { "playerctl", "previous" NULL };
+static const char *pauseTitle[]     = { "playerctl", "play-pause" NULL };
+static const char *brightnessDown[] = { "light -U 15", NULL };
+static const char *brightnessUp[]   = { "light -A 15", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -126,6 +129,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ 0,                            XF86XK_MonBrightnessUp,  spawn, {.v = brightnessUp } },
 	{ 0,                            XF86XK_MonBrightnessDown,spawn, {.v = brightnessDown } },
+    { 0,                            XF86XK_AudioMute,		 spawn,	{.v = muteOutCmd} },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volUpCmd} },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,	{.v = volDownCmd} },
+	{ 0,                            XF86XK_AudioPlay,		spawn,	{.v = pauseTitle} },
+	{ 0,                            XF86XK_AudioPrev,		spawn,	{.v = prevTitle} },
+	{ 0,                            XF86XK_AudioNext,		spawn,	{.v = nextTitle} },
 	{ MODKEY|ShiftMask,             XK_Escape,      quit,           {0} },
 };
 
