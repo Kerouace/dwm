@@ -74,14 +74,17 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]		= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]		= { "st", NULL };
-static const char *browser[]		= { "firefox", NULL };
-static const char *dmenumaim[]		= { "maimpick", NULL };
+static const char *dmenucmd[] 	   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *termcmd[]       = { "st", NULL };
+static const char *browser[] 	   = { "firefox", NULL };
+static const char *dmenumaim[]     = { "screenshotmenu", NULL };
 
 /* Systemcontrole */
-static const char *brightnessDown[] = {"light -U 15", NULL};
-static const char *brightnessUp[]	= {"light -A 15", NULL};
+static const char *mutecmd[]       = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)", NULL };
+static const char *volupcmd[]      = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)", NULL };
+static const char *voldowncmd[]    = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)", NULL };
+static const char *brightnessDown[]= {"light -U 15", NULL};
+static const char *brightnessUp[]  = {"light -A 15", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
