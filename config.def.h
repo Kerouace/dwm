@@ -83,11 +83,11 @@ static const char *dmenumaim[]      = { "screenshotmenu", NULL };
 static const char *muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; kill -44 $(pidof dwmblocks)", NULL };
 static const char *volUpCmd[]       = { "wpctl set-volume @DEFAULT_SINK@ 0%- && wpctl set-volume @DEFAULT_SINK@ 3%+; kill -44 $(pidof dwmblocks)", NULL };
 static const char *volDownCmd[]     = { "wpctl set-volume @DEFAULT_SINK@ 0%+ && wpctl set-volume @DEFAULT_SINK@ 3%-; kill -44 $(pidof dwmblocks)", NULL };
+static const char *brightnessDown[] = { "light -U 15", NULL };
+static const char *brightnessUp[]   = { "light -A 15", NULL };
 static const char *nextTitle[]      = { "playerctl", "next", NULL };
 static const char *prevTitle[]      = { "playerctl", "previous", NULL };
 static const char *pauseTitle[]     = { "playerctl", "play-pause", NULL };
-static const char *brightnessDown[] = { "light -U 15", NULL };
-static const char *brightnessUp[]   = { "light -A 15", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -127,11 +127,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ 0,                            XF86XK_MonBrightnessUp,  spawn, {.v = brightnessUp } },
-	{ 0,                            XF86XK_MonBrightnessDown,spawn, {.v = brightnessDown } },
-    { 0,                            XF86XK_AudioMute,		 spawn,	{.v = muteOutCmd} },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volUpCmd} },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn,	{.v = volDownCmd} },
+	{ 0,                            XF86XK_MonBrightnessUp,  spawn, SHCMD(brightnessUp) },
+	{ 0,                            XF86XK_MonBrightnessDown,spawn, SHCMD(brightnessDown) },
+    { 0,                            XF86XK_AudioMute,		 spawn,	SHCMD(muteOutCmd) },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD(volUpCmd) },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,	SHCMD(volDownCmd) },
 	{ 0,                            XF86XK_AudioPlay,		spawn,	{.v = pauseTitle} },
 	{ 0,                            XF86XK_AudioPrev,		spawn,	{.v = prevTitle} },
 	{ 0,                            XF86XK_AudioNext,		spawn,	{.v = nextTitle} },
