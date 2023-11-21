@@ -43,7 +43,7 @@ static const Rule rules[] = {
 	{ "thunderbird",NULL,		NULL,	1 << 7,		0,		0,		+1 },
 	{ "Sonixd",	    NULL,		NULL,	1 << 3,		0,		0,		+0 },
 	{ "KeePassXC",  NULL,		NULL,	1 << 4,		0,		0,		+1 },
-    { "st",         NULL,       "papis",0,          1,      0,      +0 },
+    { "papis",      NULL,       NULL,   0,          1,      1,      +0 },
 
 };
 
@@ -79,7 +79,7 @@ static const char *dmenucmd[] 	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont
 static const char *termcmd[]    = { "st", NULL };
 static const char *browser[] 	= { "firefox", NULL };
 static const char *dmenumaim[]  = { "screenshotmenu", NULL };
-static const char *papis[]      = { "st", "-t", "papis", "-e", "papis", "open", NULL };
+static const char *papis[]      = { "st", "-c", "papis", "-e", "papis", "open", NULL };
 
 /* Systemcontrole */
 static const char muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+4 $STATUSBAR" };
