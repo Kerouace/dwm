@@ -79,7 +79,7 @@ static const char *dmenucmd[] 	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont
 static const char *termcmd[]    = { "st", NULL };
 static const char *browser[] 	= { "firefox", NULL };
 static const char *dmenumaim[]  = { "screenshotmenu", NULL };
-static const char *papis[]      = { "st", "-c", "papis", "-e", "papis", "open", NULL };
+static const char *papis[]      = { "st", "-c", "papis", "-g", "160x30", "-e", "papis", "open", NULL };
 
 /* Systemcontrole */
 static const char muteOutCmd[]     = { "wpctl set-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+4 $STATUSBAR" };
