@@ -43,7 +43,7 @@ static const Rule rules[] = {
 	{ "thunderbird",NULL,		NULL,	1 << 7,		0,		0,		+1 },
 	{ "Sonixd",	    NULL,		NULL,	1 << 3,		0,		0,		+0 },
 	{ "KeePassXC",  NULL,		NULL,	1 << 4,		0,		0,		+1 },
-    { "papis",      NULL,       NULL,   0,          1,      1,      +0 },
+    { "papis",      NULL,       NULL,   0,          1,      1,      -1 },
 
 };
 
