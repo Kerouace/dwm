@@ -40,7 +40,7 @@ static const Rule rules[] = {
 	{ "discord",	NULL,		NULL,	1 << 2,		0,		0,		+1 },
 	{ "Signal",     NULL,		NULL,	1 << 2,		0,		0,		+1 },
 	{ "Slack",	    NULL,		NULL,	1 << 2,		0,		0,		+1 },
-	{ "thunderbird",NULL,		NULL,	1 << 7,		0,		0,		+1 },
+	{ "thunderbird",NULL,		NULL,	1 << 7,		0,		0,		+0 },
 	{ "Sonixd",	    NULL,		NULL,	1 << 3,		0,		0,		+0 },
 	{ "KeePassXC",  NULL,		NULL,	1 << 4,		0,		0,		+1 },
     { "papis",      NULL,       NULL,   0,          1,      1,      -1 },
